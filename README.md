@@ -11,10 +11,10 @@ Step by step for build app:
 
 after project starter just call request to:
 
-localhost:8080/nasa/temperature - without parameter sol 
+localhost:8080/nasa/temperature (without parameter sol) 
 
 or
 
-localhost:8080/nasa/temperature?sol=417
+localhost:8080/nasa/temperature?sol=417 with pass parameter sol
 
 and Smile :) 
