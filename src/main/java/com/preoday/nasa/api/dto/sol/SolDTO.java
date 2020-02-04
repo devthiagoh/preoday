@@ -1,5 +1,8 @@
 package com.preoday.nasa.api.dto.sol;
 
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -25,7 +28,7 @@ public class SolDTO {
 	private String season;
 	
 	@JsonProperty("WD")
-	private WindDirectionDTO wd;
+	private Map<String, WindDirectionDTO> wd;
 	
 	public SolDTO() {}
 
@@ -77,11 +80,12 @@ public class SolDTO {
 		this.season = season;
 	}
 
-	public WindDirectionDTO getWd() {
+	public Map<String, WindDirectionDTO> getWd() {
 		return wd;
 	}
 
-	public void setWd(WindDirectionDTO wd) {
-		this.wd = wd;
+	@JsonAnySetter
+	public void setWd(String key, WindDirectionDTO value) {
+		wd.put(key, value);
 	}
 }
