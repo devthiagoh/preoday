@@ -15,4 +15,4 @@ or
 
 localhost:8080/nasa/temperature?sol=417
 
-and Smile :)
+and Smile :) 
