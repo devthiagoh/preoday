@@ -19,12 +19,12 @@ public class MarsWeatherEndpoint {
 
 	@Autowired
 	private MarsWeatherService service;
-	
+
 	@GetMapping("/temperature")
-    public ResponseEntity<?> getAverageTemperature(@RequestParam(name = "sol", required = false) Integer sol) {
-		
+	public ResponseEntity<?> getAverageTemperature(@RequestParam(name = "sol", required = false) Integer sol) {
+
 		TemperatureDTO entity = service.getAverageTemperature(sol);
-		
+
 		return new ResponseEntity<>(entity, OK);
 	}
 }
