@@ -46,6 +46,8 @@ public class MarsWeatherService {
 		
 		if (solDTO != null) {
 			temperature.setAverageTemperature(solDTO.getValue().getAt().getAv());
+		} else {
+			temperature = getAverageTemperature();
 		}
 		
 		return temperature;
